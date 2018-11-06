@@ -19,3 +19,5 @@ class TestBasics(unittest.TestCase):
     	result = rpn.calculate("5 3 ^", True)
     	self.assertEqual(125, result)
 
+if __name__ == "__main__":
+    unittest.main()
