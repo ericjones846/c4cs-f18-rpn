@@ -2,7 +2,6 @@
 
 import operator
 import readline
-from termcolor import colored
 import click
 
 operators = {
@@ -36,10 +35,7 @@ def calculate(myarg, debug):
 def main(debug):
     while True:
         result = calculate(input("rpn calc> "), debug)
-        if result < 0:
-            print("Result: ", colored(result, 'red'))
-        else:
-            print("Result: ", result)
+        print("Result: ", result)
 
 if __name__ == '__main__':
     main()
