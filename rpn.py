@@ -24,11 +24,11 @@ def calculate(myarg):
             arg1 = stack.pop()
             result = function(arg1, arg2)
             stack.append(result)
-        #if debug:
         print(stack)
     if len(stack) != 1:
         raise TypeError("Too many parameters")
     return stack.pop()
+
 
 #@click.command()
 #@click.option('--debug', is_flag=True, help="Print more output.")
