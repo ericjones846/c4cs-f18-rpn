@@ -12,7 +12,7 @@ operators = {
     '^': operator.pow,
 }
 
-def calculate(myarg, debug):
+def calculate(myarg):
     stack = list()
     for token in myarg.split():
         try:
@@ -24,17 +24,17 @@ def calculate(myarg, debug):
             arg1 = stack.pop()
             result = function(arg1, arg2)
             stack.append(result)
-        if debug:
-            print(stack)
+        #if debug:
+        print(stack)
     if len(stack) != 1:
         raise TypeError("Too many parameters")
     return stack.pop()
 
-@click.command()
-@click.option('--debug', is_flag=True, help="Print more output.")
-def main(debug):
+#@click.command()
+#@click.option('--debug', is_flag=True, help="Print more output.")
+def main():
     while True:
-        result = calculate(input("rpn calc> "), debug)
+        result = calculate(input("rpn calc> "))
         print("Result: ", result)
 
 if __name__ == '__main__':
